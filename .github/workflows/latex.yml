@@ -25,6 +25,15 @@ jobs:
       run: |
         latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 
+    - name: Commit and push PDF
+      if: success()
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git add main.pdf
+        git commit -m "Add generated PDF [skip ci]"
+        git push
+
     - name: Upload PDF
       uses: actions/upload-artifact@v3
       with:
