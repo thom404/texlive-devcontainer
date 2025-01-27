@@ -1,0 +1,14 @@
+{
+    "name": "LaTeX Dev Container",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "settings": {},
+    "extensions": [
+      "james-yu.latex-workshop"
+    ],
+    
+    "forwardPorts": [],
+    "postCreateCommand": "",
+    "remoteUser": "root"
+  }
