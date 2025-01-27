@@ -30,7 +30,7 @@ jobs:
       run: |
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
-        git add main.pdf
+        git add main.pdf -f
         git commit -m "Add generated PDF [skip ci]"
         git push
 
