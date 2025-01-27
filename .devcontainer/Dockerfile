@@ -1,5 +1,5 @@
 # Dockerfile
-FROM texlive/texlive:X
+FROM texlive/texlive:latest
 
 # Set working directory
 WORKDIR /workspace
