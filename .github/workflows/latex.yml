@@ -41,7 +41,7 @@ jobs:
         path: main.pdf
     - name: Get current date
       id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d %H-%M-%SUTC')"
 
     - name: Release PDF
       uses: softprops/action-gh-release@v1
