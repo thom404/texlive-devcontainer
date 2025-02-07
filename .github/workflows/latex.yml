@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  # pull_request:
-  #   branches:
-  #     - main
 
 jobs:
   build:
@@ -45,12 +42,12 @@ jobs:
       run: echo "{date}={$(date +'%Y-%m-%d_%H-%M-%S')}" >> $GITHUB_ENV_DATE
 
     - name: Rename PDF
-      run: mv main.pdf Main-${{ $GITHUB_ENV_DATE }}.pdf
+      run: mv main.pdf Main-$GITHUB_ENV_DATE.pdf
 
     - name: Release PDF
       uses: softprops/action-gh-release@v1
       if: success()
       with:
-        files: Main-${{ $GITHUB_ENV_DATE}}.pdf
-        tag_name: ${{ $GITHUB_ENV_DATE }}
+        files: Main-$GITHUB_ENV_DATE.pdf
+        tag_name: $GITHUB_ENV_DATE
         make_latest: true
