@@ -45,7 +45,7 @@ jobs:
       run: echo "{date}={$(date +'%Y-%m-%d_%H-%M-%S')}" >> $GITHUB_ENV_DATE
 
     - name: Rename PDF
-      run: mv main.pdf Main-${{ $$GITHUB_ENV_DATE }}.pdf
+      run: mv main.pdf Main-${{ $GITHUB_ENV_DATE }}.pdf
 
     - name: Release PDF
       uses: softprops/action-gh-release@v1
